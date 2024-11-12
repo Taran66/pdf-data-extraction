@@ -2,29 +2,44 @@ import { useState } from "react";
 import logo from "/assets/ai_planet_logo.svg";
 import plus_sign from "/assets/logo3.svg";
 import file_img from "/assets/logo2.svg";
+import axios from "axios";
 
 const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [file, setFile] = useState(null);
 
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile && selectedFile.type === "application/pdf") {
             setFile(selectedFile);
-            console.log("File uploaded:", selectedFile.name);
+            await uploadFile(selectedFile)
         } else {
             alert("Please upload a PDF file");
         }
     };
 
-    const handleDrop = (e) => {
+    const handleDrop = async (e) => {
         e.preventDefault();
         const droppedFile = e.dataTransfer.files[0];
         if (droppedFile && droppedFile.type === "application/pdf") {
             setFile(droppedFile);
-            console.log("File uploaded:", droppedFile.name);
+            await uploadFile(droppedFile)
         } else {
             alert("Please upload a PDF file");
+        }
+    };
+
+    const uploadFile = async (selectedFile) => {
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+
+        try {
+            const response = await axios.post("http://localhost:8000/upload", formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+            console.log("File uploaded successfully:", response.data);
+        } catch (error) {
+            console.error("Error uploading file:", error);
         }
     };
 
