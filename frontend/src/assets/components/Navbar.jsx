@@ -35,7 +35,7 @@ const Navbar = () => {
         formData.append("file", selectedFile);
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData, { // Sending the file to the backend using axios
+            const response = await axios.post("http://127.0.0.1:8000/upload", formData, { // Sending the file to the backend using axios
                 headers: { "Content-Type": "multipart/form-data" }, // Setting the content type to multipart/form-data
             });
             console.log("File uploaded successfully:", response.data);
