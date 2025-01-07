@@ -11,7 +11,7 @@ import uuid
 
 load_dotenv()
 
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173") 
+frontend_url = os.getenv("FRONTEND_URL") 
 
 origins = [
     frontend_url,  # Allow the frontend URL
