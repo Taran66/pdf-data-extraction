@@ -14,8 +14,7 @@ load_dotenv()
 frontend_url = os.getenv("FRONTEND_URL") 
 
 origins = [
-    "https://pdf-data-extraction-pi.vercel.app/",  
-    "http://localhost:5173"  
+    frontend_url,  # Allow the frontend URL
 ]
 
 app = FastAPI()  # Create the FastAPI app
