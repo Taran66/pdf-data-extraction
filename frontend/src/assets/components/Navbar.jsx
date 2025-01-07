@@ -35,7 +35,7 @@ const Navbar = () => {
         formData.append("file", selectedFile);
 
         try {
-            const response = await axios.post("https://vercel.com/taranpreet-singhs-projects-b617bb93/pdf-ai-extraction/66DP2mzjfqPZW2Qh5NqhfjtbexCq/upload", formData, { // Sending the file to the backend using axios
+            const response = await axios.post("https://pdf-ai-extraction-git-main-taranpreet-singhs-projects-b617bb93.vercel.app/upload", formData, { // Sending the file to the backend using axios
                 headers: { "Content-Type": "multipart/form-data" }, // Setting the content type to multipart/form-data
             });
             console.log("File uploaded successfully:", response.data);

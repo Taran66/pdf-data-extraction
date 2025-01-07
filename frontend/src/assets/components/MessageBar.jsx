@@ -26,7 +26,7 @@ const MessageBar = () => {
           setMessage('');
     
           try {
-            const response = await axios.post("https://vercel.com/taranpreet-singhs-projects-b617bb93/pdf-ai-extraction/66DP2mzjfqPZW2Qh5NqhfjtbexCq/chat", { question: message }); // Sending the message to the backend using axios
+            const response = await axios.post("https://pdf-ai-extraction-git-main-taranpreet-singhs-projects-b617bb93.vercel.app/chat", { question: message }); // Sending the message to the backend using axios
             const botReply = { type: "bot", text: response.data.answer }; // Setting the state for the bot reply
             setConversation((prev) => [...prev, botReply]);
           } catch (error) { // If there is an error
