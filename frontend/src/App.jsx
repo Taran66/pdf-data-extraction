@@ -6,8 +6,7 @@ function App() {
 
 
   return (
-    <div className='flex flex-col h-screen justify-between py-5'>
-      <Navbar />
+    <div>
       <MessageBar />
     </div>
   )

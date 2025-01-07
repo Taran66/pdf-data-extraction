@@ -8,6 +8,7 @@ const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [file, setFile] = useState(null);
 
+ 
     const handleFileChange = async (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile && selectedFile.type === "application/pdf") {
