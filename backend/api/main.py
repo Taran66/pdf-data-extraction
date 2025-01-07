@@ -11,12 +11,13 @@ import uuid
 
 load_dotenv()
 
-frontend_url = os.getenv("FRONTEND_URL") 
+frontend_url = os.getenv("FRONTEND_URL")
+frontend_local = os.getenv("FRONTEND_LOCAL_URL")
 
 origins = [
-    frontend_url,  # Allow the frontend URL
+    frontend_url,    # Production frontend URL
+    frontend_local,  # Local development URL
 ]
-
 app = FastAPI()  # Create the FastAPI app
 
 app.add_middleware(  # Add CORS middleware
