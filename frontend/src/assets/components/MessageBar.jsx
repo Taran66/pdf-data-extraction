@@ -26,7 +26,7 @@ const MessageBar = () => {
           setMessage('');
     
           try {
-            const response = await axios.post("http://localhost:8000/chat", { question: message }); // Sending the message to the backend using axios
+            const response = await axios.post("https://vercel.com/taranpreet-singhs-projects-b617bb93/pdf-ai-extraction/66DP2mzjfqPZW2Qh5NqhfjtbexCq/chat", { question: message }); // Sending the message to the backend using axios
             const botReply = { type: "bot", text: response.data.answer }; // Setting the state for the bot reply
             setConversation((prev) => [...prev, botReply]);
           } catch (error) { // If there is an error
@@ -59,7 +59,7 @@ const MessageBar = () => {
                     speed={100}
                     />
                 </div>
-                ) : ( // If the message is from the user displaying the text
+                ) : ( // If the message is from the user display the text
                 <div className="flex">
                     <img src={userImage} alt="user-logo" className="w-8 h-8 mr-2" />
                     {msg.text}
