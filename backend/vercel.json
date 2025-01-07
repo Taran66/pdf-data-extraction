@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/main.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/main/(.*)",
+        "dest": "/backend/main.py"
+      }
+    ],
+    "env": {
+      "PORT": "8000",
+      "FRONTEND_URL": "https://pdf-data-extraction-pi.vercel.app/",
+      "GROQ_API_KEY": "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"
+    }
+  }
+  
