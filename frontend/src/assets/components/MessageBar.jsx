@@ -26,7 +26,7 @@ const MessageBar = () => {
           setMessage('');
     
           try {
-            const response = await axios.post("http://127.0.0.1:8000/chat", { question: message }); // Sending the message to the backend using axios
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/chat`, { question: message }); // Sending the message to the backend using axios
             const botReply = { type: "bot", text: response.data.answer }; // Setting the state for the bot reply
             setConversation((prev) => [...prev, botReply]);
           } catch (error) { // If there is an error
