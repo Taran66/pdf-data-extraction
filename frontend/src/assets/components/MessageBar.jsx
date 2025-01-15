@@ -19,6 +19,7 @@ const MessageBar = () => {
     }
 
     const handleSubmit = async (e) => { // Function to handle the submission of the message
+        const url = import.meta.env.VITE_API_URL
         e.preventDefault();
         if (message.trim()) {
           const userMessage = { type: "user", text: message };
@@ -26,7 +27,7 @@ const MessageBar = () => {
           setMessage('');
     
           try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/chat`, { question: message }); // Sending the message to the backend using axios
+            const response = await axios.post(`${url}/chat`, { question: message }); // Sending the message to the backend using axios
             const botReply = { type: "bot", text: response.data.answer }; // Setting the state for the bot reply
             setConversation((prev) => [...prev, botReply]);
           } catch (error) { // If there is an error
