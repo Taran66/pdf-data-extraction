@@ -13,11 +13,14 @@ load_dotenv()
 
 frontend_url_1 = os.getenv("FRONTEND_URL_CHAT")
 frontend_url_2 = os.getenv("FRONTEND_URL_UPLOAD")
+frontend_url = os.getenv("FRONTEND_URL")
 frontend_local = os.getenv("FRONTEND_LOCAL_URL")
+
 
 origins = [
     frontend_url_1,    # Production frontend URL
     frontend_url_2,    # Production frontend URL
+    frontend_url,      # Production frontend URL
     frontend_local,  # Local development URL
 ]
 app = FastAPI()  # Create the FastAPI app
