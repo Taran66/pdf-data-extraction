@@ -40,7 +40,7 @@ const MessageBar = () => {
   return (
     <div>
 
-<div className="flex flex-col justify-between h-screen overflow-hidden py-4">
+<div className="flex flex-col h-[100svh] py-4 ">
     <Navbar />
         <div className="p-5 overflow-y-scroll h-full">
           {conversation.map((msg, index) => ( // Mapping the conversation
@@ -88,3 +88,49 @@ const MessageBar = () => {
 }
 
 export default MessageBar
+
+
+{/* <div className="flex flex-col h-screen">
+  <div className="flex-1 overflow-y-auto px-4">
+    {conversation.map((msg, index) => (
+      <div 
+        key={index} 
+        className="p-3 my-2 rounded-md text-black font-normal text-left"
+      >
+        <img src="" alt="" />
+        {msg.type === "bot" ? (
+          <div className="flex items-start">
+            <img src={aiplanet} alt="ai-logo" className="w-6 h-6 mr-2" />
+            <div 
+              className="text-black"
+              sequence={[msg.text]}
+              wrapper="span"
+              cursor={true}
+              speed={100}
+            />
+          </div>
+        ) : (
+          <div className="flex items-start">
+            <img src={userImage} alt="user-logo" className="w-6 h-6 mr-2" />
+            <div>{msg.text}</div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+  
+  <div className="p-4">
+    <form onSubmit={handleSubmit} className="flex">
+      <input
+        type="text"
+        value={message}
+        onChange={handleChange}
+        placeholder="Send a message..."
+        className="flex-1 p-3 outline-none bg-slate-200 rounded-l"
+      />
+      <button type="submit" className="px-4 bg-slate-200 rounded-r">
+        <img src={arrow} alt="arrow-logo" />
+      </button>
+    </form>
+  </div>
+</div> */}

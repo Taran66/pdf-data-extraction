@@ -48,12 +48,12 @@ const Navbar = () => {
     return (
         <div className="flex flex-col justify-between shadow-md p-5">
             <div className="flex justify-between">
-                <img src={logo} className="sm:w-1/4" alt="logo" /> 
+                <img src={logo} className="md:h-10 sm:h-4" alt="logo" /> 
                 <div className="flex gap-10">
                     {file && ( // Rendering the uploaded file
                         <div className="flex items-center gap-2">
-                            <img className="pl-5" src={file_img} alt="pdf" />
-                            <p className="text-gray-700">{file.name}</p>
+                            <img className="pl-5 md:h-8 sm:h-4" src={file_img} alt="pdf" />
+                            <p className="text-gray-700 hidden md:block">{file.name}</p>
                         </div>
                     )}
                     <button
