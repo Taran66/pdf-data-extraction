@@ -51,7 +51,7 @@ const MessageBar = () => {
                 <img src="" alt="" />
                 {msg.type === "bot" ? ( // Checking if the message is from the bot
                 <div className="flex">
-                    <p className="w-12 h-8 mr-2 font-bold text-xl text-center bg-slate-200 rounded-xl text-violet-700">A</p>
+                    <p className="w-8 h-8 mr-2 font-bold text-xl text-center bg-slate-200 rounded-xl text-violet-700">A</p>
                     <TypeAnimation // Using react-type-animation to animate the text
                     className="text-black"
                     sequence={[msg.text]} // response from the bot
