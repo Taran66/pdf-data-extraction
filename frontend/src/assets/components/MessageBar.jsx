@@ -2,8 +2,8 @@ import { useState } from "react"
 import arrow from "/assets/logo4.svg"
 import axios from "axios"
 import { TypeAnimation } from 'react-type-animation';
-import { FaUserCircle } from "react-icons/fa";
-import { RiRobot3Fill } from "react-icons/ri";
+import aiplanet from '/assets/ai_planet.svg'
+import userImage from '/assets/logo1.svg'
 import Navbar from "./Navbar";
 
 const MessageBar = () => { 
@@ -51,7 +51,7 @@ const MessageBar = () => {
                 <img src="" alt="" />
                 {msg.type === "bot" ? ( // Checking if the message is from the bot
                 <div className="flex">
-                    <RiRobot3Fill />
+                    <img src={aiplanet} alt="ai-logo" className="w-8 h-8 mr-2" />
                     <TypeAnimation // Using react-type-animation to animate the text
                     className="text-black"
                     sequence={[msg.text]} // response from the bot
@@ -62,8 +62,7 @@ const MessageBar = () => {
                 </div>
                 ) : ( // If the message is from the user display the text
                 <div className="flex">
-                    {/* <img src={userImage} alt="user-logo" className="w-8 h-8 mr-2" /> */}
-                    <FaUserCircle />
+                    <img src={userImage} alt="user-logo" className="w-8 h-8 mr-2" />
                     {msg.text}
                 </div>
                 )}
