@@ -48,7 +48,7 @@ const Navbar = () => {
     return (
         <div className="flex flex-col justify-between shadow-md p-5">
             <div className="flex justify-between">
-                <img src={logo} className="md:h-10 sm:h-4" alt="logo" /> 
+                <h1 className="text-violet-700 font-bold text-3xl">Askify</h1>
                 <div className="flex gap-10">
                     {file && ( // Rendering the uploaded file
                         <div className="flex items-center gap-2">
