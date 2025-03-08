@@ -36,7 +36,7 @@ app.add_middleware(  # Add CORS middleware
 port = int(os.environ.get("PORT", 8000))  # Get the port from environment variable
 
 model = ChatGroq(  # Initialize the model
-    model='mixtral-8x7b-32768',
+    model='mistral-saba-24b',
     groq_api_key=os.environ.get("GROQ_API_KEY"),
     temperature=0.7,
     max_tokens=4096,
