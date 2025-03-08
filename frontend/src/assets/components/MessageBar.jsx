@@ -2,7 +2,7 @@ import { useState } from "react"
 import arrow from "/assets/logo4.svg"
 import axios from "axios"
 import { TypeAnimation } from 'react-type-animation';
-import askify from '/assets/A.png'
+import askify from '/assets/askify.png'
 import userImage from '/assets/logo1.svg'
 import Navbar from "./Navbar";
 
